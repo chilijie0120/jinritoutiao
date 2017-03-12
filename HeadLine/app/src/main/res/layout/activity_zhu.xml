@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
   >
+    <FrameLayout
+        android:id="@+id/zhu_fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    </FrameLayout>
+   <RadioGroup
+       android:id="@+id/rg"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       >
+     <RadioButton
+         android:id="@+id/rb_home"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center"
+         android:button="@null"
+         android:drawableTop="@drawable/home_radiobutton_drawble"
+         android:text="首页"
+         android:textColor="@drawable/radiobutton_textcolor"
+         android:layout_weight="1"
+         />
+       <RadioButton
+           android:id="@+id/rb_sun"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:gravity="center"
+           android:button="@null"
+           android:drawableTop="@drawable/sun_radiobutton_drawble"
+           android:text="阳光宽频"
+           android:textColor="@drawable/radiobutton_textcolor"
+           android:layout_weight="1"
+           />
+       <RadioButton
+           android:id="@+id/rb_attention"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:gravity="center"
+           android:button="@null"
+           android:drawableTop="@drawable/attention_radiobutton_drawble"
+           android:text="关注"
+           android:textColor="@drawable/radiobutton_textcolor"
+           android:layout_weight="1"
+           />
+   </RadioGroup>
 
-</RelativeLayout>
+</LinearLayout>

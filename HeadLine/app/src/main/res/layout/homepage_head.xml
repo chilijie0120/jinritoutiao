@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#D43D3D"
+    android:id="@+id/include"
+    >
+    <ImageView
+        android:id="@+id/zhu_head_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/cehua"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今日头条"
+        android:layout_centerInParent="true"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        />
+</RelativeLayout>

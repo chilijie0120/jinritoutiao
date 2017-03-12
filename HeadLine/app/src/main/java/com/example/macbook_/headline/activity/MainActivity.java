@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addPoint() {
-       imageViews=new ArrayList<>();
+        imageViews=new ArrayList<>();
         for (int i = 0; i <integers.size() ; i++) {
-         ImageView imageView=new ImageView(this);
+            ImageView imageView=new ImageView(this);
             imageView.setImageResource(i==0?R.drawable.point_black:R.drawable.point_bai);
             LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
             params.rightMargin=10;
@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onPageSelected(int position) {
-                  in.setVisibility(position==imageViews.size()-1?View.VISIBLE:View.GONE);
+                in.setVisibility(position==imageViews.size()-1? View.VISIBLE:View.GONE);
                 for (int i = 0; i <imageViews.size() ; i++) {
-                   imageViews.get(i).setImageResource(i==position?R.drawable.point_black:R.drawable.point_bai);
+                    imageViews.get(i).setImageResource(i==position?R.drawable.point_black:R.drawable.point_bai);
                 }
             }
 
