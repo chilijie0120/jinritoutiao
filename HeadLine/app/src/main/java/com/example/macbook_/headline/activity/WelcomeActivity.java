@@ -24,7 +24,8 @@ private Handler handler=new Handler(){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         ImageView imageView= (ImageView) findViewById(R.id.welcome_iv);
-        imageView.setImageResource(R.mipmap.xinwen1);
+        imageView.setImageResource(R.mipmap.jrtt);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         handler.sendEmptyMessageDelayed(0,2000);
 
 

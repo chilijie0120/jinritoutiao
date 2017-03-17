@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="TextDian">#F85959</color>
     <color name="TextXiao">#000000</color>
+    <color name="Guanzhu">#0000ff</color>
+    <color name="GuanzhuFu">#B5B5B5</color>
 </resources>

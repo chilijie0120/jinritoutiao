@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -16,8 +15,6 @@ import com.example.macbook_.headline.fragment.SunFragment;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
-
-    private ImageView head_iv;
     public static SlidingMenu slidingMenu;
     private FragmentManager fragmentManager;
     private RadioGroup rg;
@@ -51,7 +48,7 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
 
     private void getFragment(Fragment fragment) {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.zhu_fl,fragment);
+        transaction.replace(R.id.zhu_fl,fragment);
         transaction.commit();
     }
 
