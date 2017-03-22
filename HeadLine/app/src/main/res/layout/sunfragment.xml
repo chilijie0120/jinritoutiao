@@ -4,10 +4,24 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <xlistview.bawei.com.xlistviewlibrary.XListView
-        android:id="@+id/sun_xlv"
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_sun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include"
+        android:background="#F6F5F4"
+        app:tabSelectedTextColor="#0000ff"
+        app:tabTextColor="#000000"
+        app:tabIndicatorColor="#ff0000"
+        
+        >
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/sun_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/tab_sun"
         >
-    </xlistview.bawei.com.xlistviewlibrary.XListView>
+    </android.support.v4.view.ViewPager>
 </RelativeLayout>

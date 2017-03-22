@@ -1,14 +1,28 @@
 package com.example.macbook_.headline.bean;
 
-import java.util.List;
-
 /**
  * Created by MacBook- on 2017/3/13.
  */
 public class Sun {
+    private String mp4_url;
+    private String cover;
     private String title;
-    private String source;
-    private List<Sun_Image> large_image_list;
+    private String videosource;
+    public String getMp4_url() {
+        return mp4_url;
+    }
+
+    public void setMp4_url(String mp4_url) {
+        this.mp4_url = mp4_url;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
 
     public String getTitle() {
         return title;
@@ -18,31 +32,11 @@ public class Sun {
         this.title = title;
     }
 
-    public String getSource() {
-        return source;
+    public String getVideosource() {
+        return videosource;
     }
 
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public List<Sun_Image> getLarge_image_list() {
-        return large_image_list;
-    }
-
-    public void setLarge_image_list(List<Sun_Image> large_image_list) {
-        this.large_image_list = large_image_list;
-    }
-
-    public class Sun_Image{
-        private String url;
-
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
+    public void setVideosource(String videosource) {
+        this.videosource = videosource;
     }
 }

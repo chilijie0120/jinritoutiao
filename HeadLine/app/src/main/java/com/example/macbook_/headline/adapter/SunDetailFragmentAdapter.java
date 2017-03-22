@@ -18,11 +18,11 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 /**
  * Created by MacBook- on 2017/3/14.
  */
-public class SunFragmentAdapter extends BaseAdapter {
+public class SunDetailFragmentAdapter extends BaseAdapter {
     private List<Sun> list;
     private Context context;
 
-    public SunFragmentAdapter(List<Sun> list, Context context) {
+    public SunDetailFragmentAdapter(List<Sun> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -48,24 +48,22 @@ public class SunFragmentAdapter extends BaseAdapter {
         if (convertView==null){
                   vh=new Viewholder();
                   convertView=View.inflate(context, R.layout.sundetaillistview,null);
-            vh.tv1= (TextView) convertView.findViewById(R.id.sunlist_tv1);
             vh.tv2= (TextView) convertView.findViewById(R.id.sunlist_tv2);
             vh.player = (JCVideoPlayerStandard) convertView.findViewById(R.id.sun_player_video);
                   convertView.setTag(vh);
         }else{
                     vh= (Viewholder) convertView.getTag();
         }
-        vh.tv1.setText(list.get(position).getTitle());
-        vh.tv2.setText(list.get(position).getSource());
-        boolean setUp =vh.player.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4", JCVideoPlayer.SCREEN_LAYOUT_LIST, "");
+        vh.tv2.setText(list.get(position).getVideosource());
+        boolean setUp =vh.player.setUp(list.get(position).getMp4_url(), JCVideoPlayer.SCREEN_LAYOUT_LIST, list.get(position).getTitle());
         if (setUp) {
-            Glide.with(context).load(list.get(position).getLarge_image_list().get(0).getUrl()).into(vh.player.thumbImageView);
+            Glide.with(context).load(list.get(position).getCover()).into(vh.player.thumbImageView);
         }
         return convertView;
     }
 
     class Viewholder{
         JCVideoPlayerStandard player;
-        TextView tv1,tv2;
+        TextView tv2;
     }
 }

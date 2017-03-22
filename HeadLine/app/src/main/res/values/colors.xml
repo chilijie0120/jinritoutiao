@@ -7,4 +7,8 @@
     <color name="TextXiao">#000000</color>
     <color name="Guanzhu">#0000ff</color>
     <color name="GuanzhuFu">#B5B5B5</color>
+
+    <color name="nightColorPrimary">#3b3b3b</color>
+    <color name="nightColorPrimaryDark">#383838</color>
+    <color name="nightColorAccent">#a72b55</color>
 </resources>

@@ -7,9 +7,9 @@
     >
     <ImageView
         android:id="@+id/zhu_head_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/cehua"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+       android:src="@mipmap/ce"
         android:layout_centerVertical="true"
         />
     <TextView
