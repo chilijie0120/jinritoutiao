@@ -39,6 +39,7 @@ public class SunFragmentPagrAdapter extends FragmentPagerAdapter {
                 break;
         }
 
+
         return fragment;
     }
 

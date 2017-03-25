@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/pindaofenleilibrary" />
             <option value="$PROJECT_DIR$/slidingmenulibrary" />
             <option value="$PROJECT_DIR$/slidingmenulibrarys" />
             <option value="$PROJECT_DIR$/xlistviewlibrary" />
@@ -19,6 +20,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/pindaofenleilibrary" />
             <option value="$PROJECT_DIR$/slidingmenulibrary" />
             <option value="$PROJECT_DIR$/slidingmenulibrarys" />
             <option value="$PROJECT_DIR$/xlistviewlibrary" />

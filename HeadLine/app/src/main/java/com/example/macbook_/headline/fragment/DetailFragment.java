@@ -95,9 +95,9 @@ public class DetailFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(getActivity(), Home_Detail_CheckActivity.class);
-                intent.putExtra("url",homeDtails.get(position-1).getUrl());
+                intent.putExtra("url",dtails.get(position-1).getUrl());
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("object",homeDtails.get(position-1));
+                bundle.putSerializable("object",dtails.get(position-1));
                 intent.putExtra("bundle",bundle);
                 startActivity(intent);
             }

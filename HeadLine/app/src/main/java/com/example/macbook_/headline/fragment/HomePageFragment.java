@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class HomePageFragment extends Fragment {
 
-    private ImageView imageView;
+    public static ImageView imageView;
     private TextView tv_home;
     private TabLayout tab_home;
     private ViewPager vp_home;

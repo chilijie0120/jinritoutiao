@@ -7,8 +7,9 @@
     >
     <ImageView
         android:id="@+id/zhu_head_iv"
-        android:layout_width="50dp"
+        android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
        android:src="@mipmap/ce"
         android:layout_centerVertical="true"
         />

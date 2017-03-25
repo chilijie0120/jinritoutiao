@@ -1,16 +1,20 @@
 package com.example.macbook_.headline.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.macbook_.headline.R;
+import com.example.macbook_.headline.activity.ImageShowActivity;
 import com.example.macbook_.headline.bean.Home_Dtail;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -42,7 +46,7 @@ public class HomeDetailAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 //        if(homeDtails.size()==0) {
 //            convertView = View.inflate(context, R.layout.detaillistview, null);
 //            return convertView;
@@ -68,7 +72,19 @@ public class HomeDetailAdapter extends BaseAdapter {
                   vh1.iv1= (ImageView) convertView.findViewById(R.id.detaillist1_iv1);
                   vh1.iv2= (ImageView) convertView.findViewById(R.id.detaillist1_iv2);
                   vh1.iv3= (ImageView) convertView.findViewById(R.id.detaillist1_iv3);
+                  vh1.ll= (LinearLayout) convertView.findViewById(R.id.honedetail_ll);
+                  final Viewholder1 finalVh = vh1;
+                  vh1.ll.setOnClickListener(new View.OnClickListener() {
+                      @Override
+                      public void onClick(View v) {
+                          for (int i = 0; i < finalVh.ll.getChildCount() ; i++) {
 
+                          }
+                          Intent intent = new Intent(context, ImageShowActivity.class);
+                          intent.putExtra("images", (Serializable) homeDtails.get(position).getImage_list());
+                          context.startActivity(intent);
+                      }
+                  });
                   convertView.setTag(vh1);
                   break;
           }
@@ -98,6 +114,7 @@ public class HomeDetailAdapter extends BaseAdapter {
                 ImageLoader.getInstance().displayImage(homeDtails.get(position).getImage_list().get(2).getUrl(),vh1.iv3);
                 break;
         }
+
         return convertView;
     }
 
@@ -122,6 +139,7 @@ public class HomeDetailAdapter extends BaseAdapter {
     class Viewholder1{
         TextView tv11,tv12;
         ImageView iv1,iv2,iv3;
+        LinearLayout ll;
     }
 
 }
