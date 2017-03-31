@@ -11,16 +11,5 @@
        android:layout_height="match_parent">
 
    </WebView>
-   <Button
-       android:id="@+id/home_detail_guanzhu"
-       android:layout_width="80dp"
-       android:layout_height="30dp"
-       android:layout_alignParentRight="true"
-       android:layout_alignParentTop="true"
-       android:text="关注"
-       android:background="#0000ff"
-       android:layout_marginTop="20dp"
-       android:layout_marginRight="20dp"
-
        />
 </RelativeLayout>

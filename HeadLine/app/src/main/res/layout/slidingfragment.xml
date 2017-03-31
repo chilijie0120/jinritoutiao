@@ -45,8 +45,8 @@
         >
         <ImageView
             android:id="@+id/touxiang"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@mipmap/shouji"
             android:layout_marginLeft="30dp"
             />
@@ -94,12 +94,22 @@
             android:background="#ffffff"
             />
     </LinearLayout>
+    <TextView
+        android:id="@+id/siliding_tui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:layout_above="@+id/siliding_group"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        />
     <ListView
         android:id="@+id/siliding_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll1"
-        android:layout_above="@+id/siliding_group"
+        android:layout_above="@+id/siliding_tui"
         >
 
     </ListView>

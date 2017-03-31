@@ -25,6 +25,7 @@ import com.example.macbook_.headline.fragment.AttentionFragment;
 import com.example.macbook_.headline.fragment.HomePageFragment;
 import com.example.macbook_.headline.fragment.SunFragment;
 import com.example.macbook_.headline.utils.NetWorkUtils;
+import com.example.macbook_.headline.utils.SharedPrefrenceUtils;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
@@ -65,12 +66,17 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
     private boolean isauth;
     private ListView sliding_list;
     private List<SilidingList> silidingLists=new ArrayList<>();
+    private String iconurl;
+    private String name;
+    private boolean qq;
+    private TextView tui;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState != null) {
-            theme = savedInstanceState.getInt("theme");
+           theme=savedInstanceState.getInt("theme");
             setTheme(theme);
         }
         setContentView(R.layout.activity_zhu);
@@ -79,6 +85,17 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
         initView();
         gatSliding();
         initPlatforms();
+        qq = SharedPrefrenceUtils.Shoucang(this).getSp("QQ");
+        if (qq){
+            String iconurl = SharedPrefrenceUtils.getShare(this).getString("iconurl","");
+            String name = SharedPrefrenceUtils.getShare(this).getString("name", "");
+            ImageOptions options=new ImageOptions.Builder().setCircular(true).setCrop(true).build();
+            x.image().bind(touxiang, iconurl,options);
+            x.image().bind(new HomePageFragment().getImageView(),iconurl,options);
+            qq_zhanghao.setText(name);
+            ll1.setVisibility(View.INVISIBLE);
+            ll2.setVisibility(View.VISIBLE);
+        }
         isauth = UMShareAPI.get(this).isAuthorize(this, platforms.get(0).mPlatform);
     }
 
@@ -106,10 +123,19 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
         riye = (Button) findViewById(R.id.riye);
         touxiang = (ImageView) findViewById(R.id.touxiang);
         qq_zhanghao = (TextView) findViewById(R.id.qq_zhanghao);
+        tui = (TextView) findViewById(R.id.siliding_tui);
+
         ll1 = (LinearLayout) findViewById(R.id.ll1);
         ll2 = (LinearLayout) findViewById(R.id.ll2);
         sliding_list = (ListView) findViewById(R.id.siliding_list);
         slidingListData();
+        tui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPrefrenceUtils.Shoucang(ZhuActivity.this).add("QQ",false);
+               recreate();
+            }
+        });
         iv_shouji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -271,6 +297,7 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
             SilidingList list=new SilidingList(title[i],photo[i]);
             silidingLists.add(list);
         }
+
         sliding_list.setAdapter(new SilidingListAdapter(silidingLists,ZhuActivity.this));
 
     }
@@ -322,9 +349,8 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if(savedInstanceState!=null){
-            savedInstanceState.getInt("theme");
-        }
+       slidingMenu.showMenu();
+
     }
 
 
@@ -344,14 +370,18 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
                     mShareAPI.getPlatformInfo(ZhuActivity.this, SHARE_MEDIA.QQ, authListener);
                     break;
                 case ACTION_GET_PROFILE:
-                    String iconurl = data.get("iconurl");
-                    String name = data.get("name");
+                    iconurl =  data.get("iconurl");
+                    name =  data.get("name");
                     ImageOptions options=new ImageOptions.Builder().setCircular(true).setCrop(true).build();
                     x.image().bind(touxiang,iconurl,options);
-                    x.image().bind(HomePageFragment.imageView,iconurl,options);
+                    ImageView imageView = new HomePageFragment().getImageView();
+                    x.image().bind(new HomePageFragment().getImageView(),iconurl,options);
                     qq_zhanghao.setText(name);
                     ll1.setVisibility(View.INVISIBLE);
                     ll2.setVisibility(View.VISIBLE);
+                    SharedPrefrenceUtils.Shoucang(ZhuActivity.this).add("QQ",true);
+                    SharedPrefrenceUtils.Shoucang(ZhuActivity.this).getEditor().putString("iconurl",iconurl).commit();
+                    SharedPrefrenceUtils.Shoucang(ZhuActivity.this).getEditor().putString("name",name).commit();
 
                     break;
 
@@ -378,4 +408,5 @@ public class ZhuActivity extends AppCompatActivity implements RadioGroup.OnCheck
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
 
     }
+
 }

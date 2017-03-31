@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="我的关注"
+          android:textColor="@android:color/darker_gray"
+          android:textSize="30sp"
+          android:layout_centerHorizontal="true"
+          />
+        <TextView
+            android:id="@+id/attention_jia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="25sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/xian"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rl"
+        android:background="@android:color/darker_gray"
+
+        />
     <ListView
         android:id="@+id/attention_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:layout_below="@id/xian"
+        android:visibility="gone"
+        >
     </ListView>
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/moren_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/xian"
+        >
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerInParent="true"
+         android:text="您还没有关注哦！"
+         android:textSize="30sp"
+         android:textColor="@android:color/darker_gray"
+         />
+    </RelativeLayout>
+</RelativeLayout>

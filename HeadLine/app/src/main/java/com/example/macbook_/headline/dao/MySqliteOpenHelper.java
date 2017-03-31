@@ -14,7 +14,8 @@ public class MySqliteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-    db.execSQL("create table guanzhu(_id Integer primary key autoincrement,image varchar(100),title varchar(100),source varchar(100),url varchar(100))");
+   // db.execSQL("create table guanzhu(_id Integer primary key autoincrement,image varchar(100),title varchar(100),source varchar(100),url varchar(100))");
+        db.execSQL("create table attention(_id Integer primary key autoincrement,title varchar(100),url varchar(500))");
     }
 
     @Override

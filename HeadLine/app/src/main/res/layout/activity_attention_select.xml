@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <RelativeLayout
+        android:id="@+id/rll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择关注"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            />
+        <ImageView
+            android:id="@+id/attention_fan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/fanhui"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/xian"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rll"
+        android:background="@android:color/darker_gray"
+
+        />
+    <ListView
+        android:id="@+id/attention_select_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/xian"
+        >
+    </ListView>
+</RelativeLayout>

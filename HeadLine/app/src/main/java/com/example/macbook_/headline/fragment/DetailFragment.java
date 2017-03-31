@@ -76,7 +76,15 @@ public class DetailFragment extends Fragment {
         home_xlv.setXListViewListener(new XListView.IXListViewListener() {
             @Override
             public void onRefresh() {
+                count=20;
+                handler.postDelayed(new Runnable() {
 
+                    @Override
+                    public void run() {
+                        getServerData();
+                        home_xlv.stopRefresh();
+                    }
+                },2000);
             }
 
             @Override

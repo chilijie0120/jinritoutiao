@@ -34,7 +34,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="58d26bad5312dd99c5001f68"></meta-data>
+            android:value="58d26bad5312dd99c5001f68" />
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -69,7 +69,10 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".activity.ImageShowActivity"></activity>
+        <activity android:name=".activity.ImageShowActivity" />
+        <activity android:name=".activity.AttentionSelectActivity" />
+        <activity android:name=".activity.AttentionDetailActivity" />
+        <activity android:name=".activity.TablayoutDetailActivity"></activity>
     </application>
 
 </manifest>

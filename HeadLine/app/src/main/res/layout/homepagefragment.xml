@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    >
     <include layout="@layout/homepage_head"></include>
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@id/include"
+
         android:background="#F6F5F4"
-        app:tabSelectedTextColor="#0000ff"
-        app:tabTextColor="#000000"
-        app:tabIndicatorColor="#ff0000"
-        
+        tabSelectedTextColor="#0000ff"
+        tabTextColor="#000000"
+        tabIndicatorColor="#ff0000"
+        android:layout_centerVertical="true"
         >
     </android.support.design.widget.TabLayout>
     <TextView
@@ -24,11 +27,12 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:background="#F6F5F4"
+        android:textSize="35sp"
+        android:textColor="#000000"
         android:text="+"
-        android:textSize="40sp"
-        android:alpha="@android:integer/config_longAnimTime"
+        android:background="#F6F5F4"
         />
+
     <android.support.v4.view.ViewPager
         android:id="@+id/home_vp"
         android:layout_width="match_parent"
